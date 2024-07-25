@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <h4>Rock Paper Scissors</h4>
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissors')">Scissors</button>
+
+<script>
+
+
+function playGame(rps) {
+    let computerPick = pickComputerMove();
+    let result;
+    if (rps === "Scissors") {
+          if (computerPick === "Scissors") {
+            result = "Tie";
+          } else if (computerPick === "Paper") {
+            result = "You Win";
+          } else {
+            result = "You Lose";
+          }
+        } 
+    else if (rps === "Paper") {
+          if (computerPick === "Paper") {
+            result = "Tie";
+          } else if (computerPick === "Rock") {
+            result = "You Win";
+          } else {
+            result = "You Lose";
+          }
+        } 
+    else if (rps === "Rock") {
+          if (computerPick === "Rock") {
+            result = "Tie";
+          } else if (computerPick === "Scissors") {
+            result = "You Win";
+          } else {
+            result = "You Lose";
+          }
+
+        }
+        alert(`You Picked ${rps}. Computer Picked ${computerPick}. ${result}`);
+      }
+
+      console.log(pickComputerMove());
+
+      function pickComputerMove() {
+        let computer = Math.floor(Math.random() * 3);
+        console.log(computer);
+        let rps = ["Rock", "Paper", "Scissors"];
+        let computerPick = rps[computer];
+        return computerPick;
+      }
+    </script>
+  </body>
+</html>

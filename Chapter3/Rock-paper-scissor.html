@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+<body>
+  <h4>Rock Paper Scissors</h4>
+  <button onclick="
+  User='Rock';
+  let computer=Math.floor(Math.random()*3);
+  console.log(computer);
+  let rps=['Rock','Paper','Scissors'];
+  let computerPick=rps[computer];
+  let result;
+  if (User==='Rock' && computerPick==='Rock')
+  {
+    result='Tie'
+  }
+  else if(User==='Rock' && computerPick ==='Scissors')
+  {
+    result='You Win'
+  }
+  else
+  {
+    result='You Lose'
+  }
+  alert(`You Picked ${User} Computer Picked ${computerPick} ${result}`)">Rock</button>
+  <button onclick="
+  User='paper';
+  let computer=Math.floor(Math.random()*3);
+  console.log(computer);
+  let rps=['Rock','Paper','Scissors'];
+  let computerPick=rps[computer];
+  let result;
+  if (User==='paper' && computerPick==='Paper')
+  {
+    result='Tie'
+  }
+  else if(User==='paper' && computerPick ==='Rock')
+  {
+    result='You Win'
+  }
+  else
+  {
+    result='You Lose'
+  }
+  alert(`You Picked ${User} Computer Picked ${computerPick} ${result}`)">Paper</button>
+  <button onclick="
+  User='Scissors';
+  let computer=Math.floor(Math.random()*3);
+  console.log(computer);
+  let rps=['Rock','Paper','Scissors'];
+  let computerPick=rps[computer];
+  let result;
+  if (User==='Scissors' && computerPick==='Scissors')
+  {
+    result='Tie'
+  }
+  else if(User==='Scissors' && computerPick ==='Paper')
+  {
+    result='You Win'
+  }
+  else
+  {
+    result='You Lose'
+  }
+  
+  alert(`You Picked ${User} Computer Picked ${computerPick} ${result}`)">Scissors</button>
+
+  <script>
+    let User;
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    let hour=8;
+    let name='Simon'
+    if(hour>=6 && hour<=12)
+    {
+      console.log(`Good Morning ${name}`)
+    }
+    else if(hour>=13 && hour<=17)
+    {
+      console.log(`Good Aftenoon ${name}`)
+    }
+    else{
+      console.log(`Good Night ${name}`)
+    }
+
+    // Problem2
+    let age=70
+    const isHoliday=true
+    if((age<=6 || age>=65) && (!isHoliday))
+    {
+        console.log('Discount 30%')
+    }
+    else
+    {
+      console.log("No Discount")
+    }
+
+    // Problem3
+    const randomNumber=Math.random()
+
+    let guess='tails'
+    let result;
+    if (randomNumber<=0.5)
+    {
+      result='heads'
+    }
+    else
+    {
+      result='tails'
+    }
+   
+    if(guess===result)
+    {
+      console.log('Congratulations,You Win!!!!')
+    }
+    else
+    {
+      console.log('Sorry,You Lost')
+    }
+
+    guess===result?console.log('Congratulations,You Win!!!!'):console.log('Sorry,You Lost')
+  </script>
+</body>
+</html>

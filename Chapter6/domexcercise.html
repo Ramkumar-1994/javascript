@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn
+    {
+      margin-right: 20px;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      font-size: 50px;
+      background-color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button onclick="change()">Subscribe</button>
+  <h1>Rock Paper Scissors Game</h1>
+  <button onclick="playGame('✊🏻')" class="btn">✊🏻</button>
+  <button onclick="playGame('🖐🏻')" class="btn">🖐🏻</button>
+  <button onclick="playGame('✌🏻')" class="btn">✌🏻</button>
+  <p id="playResult"></p>
+  <p id="playersMove"></p>
+  <p id="result">Wins:0,Losses:0,Ties:0</p>
+  <button onclick="
+  score.Wins=0;
+  score.Losses=0;
+  score.Tie=0;
+
+  gameResult.innerText=`Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Tie}`">Reset Score</button>
+
+<button onclick="toss(event)">Heads</button>
+<button onclick="toss(event)">Tails</button>
+<p id="para"></p>
+  <script>
+    function toss(event)
+    {
+      let para=document.getElementById('para')
+      para.innerText=`You Choose:${event.target.innerText}`
+    }
+    let score=JSON.parse(localStorage.getItem('score'))
+    let playResult=document.getElementById('playResult')
+    let gameResult=document.getElementById('result')
+    let playersMove=document.getElementById('playersMove')
+    function computerMove()
+    {
+      let rps=['✊🏻','🖐🏻','✌🏻']
+      let random=Math.floor(Math.random()*3)
+      let computerPick=rps[random]
+      return computerPick
+    }
+    console.log(computerMove())
+
+    let result=''
+    function playGame(data)
+    {
+      let computerPick=computerMove()
+      if(data==='✊🏻')
+      {
+        if(computerPick==='✊🏻')
+        {
+          result='Tie'
+        }
+        else if(computerPick==='🖐🏻')
+        {
+          result='You Lose'
+        }
+        else if(computerPick==='✌🏻')
+        {
+          result='You Win'
+        }
+      }
+      else if(data==='🖐🏻')
+      {
+        if(computerPick==='🖐🏻')
+        {
+          result='Tie'
+        }
+        else if(computerPick==='✌🏻')
+        {
+          result='You Lose'
+        }
+        else if(computerPick==='✊🏻')
+        {
+          result='You Win'
+        }
+      }
+      else if(data==='✌🏻')
+      {
+        if(computerPick==='✌🏻')
+        {
+          result='Tie'
+        }
+        else if(computerPick==='✊🏻')
+        {
+          result='You Lose'
+        }
+        else if(computerPick==='🖐🏻')
+        {
+          result='You Win'
+        }
+      }
+
+      if(result==='You Win')
+      {
+        score.Wins+=1
+      }
+      else if(result==='You Lose')
+      {
+        score.Losses+=1
+      }
+      else if(result==='Tie')
+      {
+        score.Tie+=1
+      }
+      localStorage.setItem('score',JSON.stringify(score))
+      playResult.innerText=result
+      playersMove.innerText=`You choosed ${data}--- computer choosed ${computerPick}`
+      gameResult.innerText=`Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Tie}`
+    }
+
+  // ----------------------------------------
+    let flag=0
+    function change()
+    {
+      
+      let subcription=document.querySelector('button')
+      if (flag===0)
+      {
+        subcription.innerText='Subscribed'
+        flag=1
+      }
+      else
+      {
+        subcription.innerText='Subscribe'
+        flag=0
+      }
+    }
+
+
+
+    
+  </script>
+</body>
+</html>
